@@ -1,6 +1,8 @@
+import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import LatestNews from "../components/LatestNews";
 import LeftNavbar from "../components/layout-components/LeftNavbar";
+import RightNav from "../components/layout-components/RightNav";
 import Navbar from "../components/Navbar";
 
 const HomeLayout = () => {
@@ -19,8 +21,12 @@ const HomeLayout = () => {
         <aside className="left col-span-3">
             <LeftNavbar></LeftNavbar>
         </aside>
-        <section className="main col-span-6">Main section</section>
-        <aside className="right col-span-3">RIght Nvaber</aside>
+        <section className="main col-span-6">
+          <Outlet></Outlet>
+        </section>
+        <aside className="right col-span-3">
+            <RightNav></RightNav>
+        </aside>
       </main>
     </div>
   );
